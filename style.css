@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    outline: 1px solid var(--border-color);
+}
+
+body {
+    --border-color: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 20px #010101;
+    background: #010101;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-weight:400 ;
+}
+
+hr {
+    width: 100%;
+    border-color: var(--border-color);
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.wrapper {
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 300px;
+    border: solid 1px var(--border-color);
+    margin: auto;
+    background-color: #0e0e0e;
+    padding: 15px;
+    max-height: calc(100vh - 40px);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Result */
+.result {
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result :is(.top, .bottom){
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 5px;
+    overflow: hidden;
+    font-weight: 300;
+}
+
+.result .top{
+    font-size: 14px;
+    opacity: 40%;
+}
+
+.result .bottom{
+    font-size: 25px;
+}
+
+
+/* Buttons */
+.buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 100%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: #343434;
+    color: white;
+    position: relative;
+}
+
+button:focus {
+    outline: none;
+    border: none;
+}
+
+.buttons span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Special Buttons */
+.buttons :is(.percentage, .divide, .multiply, .minus, .plus){background-color: rgba(0, 122, 255, 0.5);}
+
+.buttons .clear {
+    font-size: 19px;
+    background: #ff3b30;
+}
+
+.buttons .undo {
+    line-height: 0;
+    background-color: #ff9500;
+}
+
+.buttons .undo svg {
+    height: auto;
+    width: 25px;
+}
+
+.buttons .divide {
+    font-size: 27px;
+}
+
+.buttons .multiply {
+    font-size: 25px;
+}
+
+.buttons .minus span{
+    transform: translate(-50%, -95%);
+}
+
+.buttons .plus {
+    font-size: 26px;
+}
+
+.buttons .get-result {
+    background: #007aff;
+    color: white;
+    width: 100%;
+    grid-column: 3/5;
+}
