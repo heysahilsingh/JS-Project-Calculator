@@ -23,7 +23,7 @@ btnClear.addEventListener("click", () => {
 btnUndo.addEventListener("click", () => {
     if (resultBottom.textContent.length > 1) {
         resultBottom.textContent = resultBottom.textContent.slice(0, -1);
-        resultVar = resultVar.slice(0, -1);
+        resultVar = resultVar.toString().slice(0, -1);
     } else {
         resultBottom.textContent = "0";
         resultVar = 0;
@@ -69,6 +69,11 @@ btnResult.addEventListener("click", () => {
     resultBottom.textContent = result.toLocaleString();
     resultVar = result;
 });
+
+
+document.addEventListener("click", () => {
+  console.log(resultVar)
+})
 
 
 // Add support for keyboard input
